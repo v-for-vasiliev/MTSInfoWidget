@@ -1,0 +1,66 @@
+{
+    "Balance": "32.024648",
+    "Birthday": null,
+    "Bonus": null,
+    "DestinationIndicator": null,
+    "DisplayName": null,
+    "FamilyName": null,
+    "FromCache": false,
+    "GivenName": null,
+    "IsLegacy": null,
+    "Login": null,
+    "Msisdn": "79154679202",
+    "OwnerType": null,
+    "PersonalAccountNumber": null,
+    "SgssnIp": null,
+    "SgssnMcc": null,
+    "Tariff": null,
+    "TariffId": null,
+    "H2O": {
+        "c": {
+            "core": "\/h2osm1\/v1\/",
+            "macroRegionId": "mts1",
+            "macroRegionName": "mts1 - МР Москва",
+            "regionId": "RUS77",
+            "regionName": "Москва"
+        },
+        "p": {
+            "muia": {
+                "acceptor": false,
+                "donor": false,
+                "donorRoleAllowed": true
+            },
+            "roaming": "HOME",
+            "services": [{
+                "active": true,
+                "id": "Smart_022015_msk_SCh",
+                "muiaEnabled": false,
+                "name": "Интернет на тарифе Smart с основным пакетом 3 Гб и дополнительными пакетами до 7,3 Гб в месяц",
+                "type": "GENERIC"
+            }, {
+                "active": true,
+                "id": "Smart_022015_msk",
+                "muiaEnabled": true,
+                "name": "Интернет на тарифе Smart с пакетом 3 Гб",
+                "type": "GENERIC"
+            }],
+            "traffics": [{
+                "expirationTime": "2015-11-09 00:00:00 UTC",
+                "limits": [{
+                    "floor": 10825728,
+                    "shaping": 16
+                }, {
+                    "floor": 3145728,
+                    "shaping": 16
+                }],
+                "muia": {
+                    "quantumSize": 102400,
+                    "sharedQuotaSize": 3145728
+                },
+                "period": "E1M",
+                "type": "GENERIC",
+                "value": 446888
+            }]
+        }
+    }
+}

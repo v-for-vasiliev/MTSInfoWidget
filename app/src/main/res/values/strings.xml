@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">МТС Инфо</string>
+    <string name="info_widget_name">МТС Инфо</string>
+    <string name="balance_label">БАЛАНС</string>
+    <string name="money_format_ru">р.</string>
+    <string name="region_label">Регион:</string>
+    <string name="traffic_label">Траффик:</string>
+    <string name="number_label">Номер:</string>
+</resources>

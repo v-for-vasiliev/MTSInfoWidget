@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "ru.android.mtsinfowidget"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            applicationIdSuffix ".release"
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BUILD_TAG", "\"release\""
+            buildConfigField "String", "NETWORK_TRACE_STATE", "\"release\""
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            buildConfigField "String", "BUILD_TAG", "\"debug\""
+            buildConfigField "String", "NETWORK_TRACE_STATE", "\"debug\""
+        }
+
+        /**
+         * The `initWith` property allows you to copy configurations from other build types,
+         * then configure just the settings you want to change. This one copies the debug build
+         * type, and then changes the manifest placeholder and application ID.
+         */
+        staging {
+            initWith debug
+            applicationIdSuffix ".debugStaging"
+            buildConfigField "String", "BUILD_TAG", "\"debugStaging\""
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    AppDependecies.each {
+        add(it.configuration, it.dependency)
+    }
+}
